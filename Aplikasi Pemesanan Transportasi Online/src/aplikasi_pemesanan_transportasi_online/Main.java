@@ -3,7 +3,11 @@ package aplikasi_pemesanan_transportasi_online;
 public class Main {
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        System.out.println("LAYANAN TRANSPORTASI ONLINE");
+        System.out.println("===========================\n");
+        System.out.println("1. Login as Driver");
+        System.out.println("2. Login as Customer");
     }
     
 }
