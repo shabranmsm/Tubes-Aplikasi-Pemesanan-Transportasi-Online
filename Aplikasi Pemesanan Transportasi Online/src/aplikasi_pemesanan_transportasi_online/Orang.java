@@ -32,5 +32,5 @@ public class Orang {
     public void setNomorTelepon(String nomorTelepon) {
         this.nomorTelepon = nomorTelepon;
     }
-    
+
 }
