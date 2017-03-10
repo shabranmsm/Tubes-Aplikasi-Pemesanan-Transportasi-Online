@@ -9,8 +9,7 @@ public class Pengemudi extends Orang{
         super(nama, email, nomorTelepon);
         this.nomorKendaraan = nomorKendaraan;
     }
-
-    
+  
     public void addPesanan(Pesanan p) {
 
     }
@@ -34,9 +33,4 @@ public class Pengemudi extends Orang{
     public String getNomorKendaraan() {
         return nomorKendaraan;
     }
-
-
-
-}
-
 }

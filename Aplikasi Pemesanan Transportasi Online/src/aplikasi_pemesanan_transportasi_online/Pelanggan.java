@@ -8,7 +8,6 @@ public class Pelanggan extends Orang{
         super(nama, email, nomorTelepon);
         this.alamat = alamat;
     }
-
     
     public void createPesanan() {
 
@@ -25,9 +24,5 @@ public class Pelanggan extends Orang{
     public String getAlamat() {
         return alamat;
     }
-
-
-
-}
 
 }
