@@ -1,7 +1,7 @@
 package aplikasi_pemesanan_transportasi_online;
 
 public class Orang {
-    protected String nama, email, nomorTelepon;
+    private String nama, email, nomorTelepon;
 
     public Orang(String nama, String email, String nomorTelepon) {
         this.nama = nama;

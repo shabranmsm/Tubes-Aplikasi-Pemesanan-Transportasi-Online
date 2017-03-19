@@ -8,6 +8,8 @@ public class Main {
         System.out.println("===========================\n");
         System.out.println("1. Login as Driver");
         System.out.println("2. Login as Customer");
+        System.out.println("Command : ");
+        
     }
     
 }

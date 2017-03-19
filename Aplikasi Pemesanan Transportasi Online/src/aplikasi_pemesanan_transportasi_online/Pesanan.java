@@ -2,7 +2,8 @@ package aplikasi_pemesanan_transportasi_online;
 
 public class Pesanan {
     private String lokasiAwal, destinasi;
-    protected int jarak, harga;
+    private int jarak;
+    protected int harga;
 
     public Pesanan(String lokasiAwal, String destinasi, int jarak, int harga) {
         this.lokasiAwal = lokasiAwal;

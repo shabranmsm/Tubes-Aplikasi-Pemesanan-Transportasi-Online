@@ -1,21 +1,21 @@
 package aplikasi_pemesanan_transportasi_online;
 
 public class Kurir extends Pesanan {
-    private int berat;
-    private String dimensiPickup;
+    private int beratMuatan;
+    private String dimensiMuatan;
 
-    public Kurir(int berat, String dimensiPickup, String lokasiAwal, String destinasi, int jarak, int harga) {
+    public Kurir(int beratMuatan, String dimensiMuatan, String lokasiAwal, String destinasi, int jarak, int harga) {
         super(lokasiAwal, destinasi, jarak, harga);
-        this.berat = berat;
-        this.dimensiPickup = dimensiPickup;
+        this.beratMuatan = beratMuatan;
+        this.dimensiMuatan = dimensiMuatan;
     }
 
     public int getBerat() {
-        return berat;
+        return beratMuatan;
     }
 
     public String getDimensiPickup() {
-        return dimensiPickup;
+        return dimensiMuatan;
     }
 
     public int getHarga() {

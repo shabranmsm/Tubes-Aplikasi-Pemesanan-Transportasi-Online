@@ -9,8 +9,8 @@ public class Pelanggan extends Orang{
         this.alamat = alamat;
     }
     
-    public void createPesanan() {
-
+    public void createPesanan(Pesanan P) {
+        
     }
 
     public void removePesanan() {

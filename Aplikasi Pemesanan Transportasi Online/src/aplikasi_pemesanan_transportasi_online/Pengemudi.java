@@ -3,7 +3,7 @@ package aplikasi_pemesanan_transportasi_online;
 public class Pengemudi extends Orang{
     private Pesanan[] pesanan;
     private String nomorKendaraan;
-    private int kinerja;
+    private int rating;
 
     public Pengemudi(String nomorKendaraan, String nama, String email, String nomorTelepon) {
         super(nama, email, nomorTelepon);
@@ -11,7 +11,7 @@ public class Pengemudi extends Orang{
     }
   
     public void addPesanan(Pesanan p) {
-
+            
     }
 
     public Pesanan[] getPesanan() {
@@ -22,12 +22,12 @@ public class Pengemudi extends Orang{
 
     }
 
-    public int getKinerja() {
-        return kinerja;
+    public int getRating() {
+        return rating;
     }
 
-    public void setKinerja(int kinerja) {
-        this.kinerja = kinerja;
+    public void setRating(int rating) {
+        this.rating = rating;
     }
 
     public String getNomorKendaraan() {
