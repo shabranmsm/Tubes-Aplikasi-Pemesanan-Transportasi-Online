@@ -15,7 +15,7 @@ public class Pesanan {
     public String getLokasiAwal() {
         return lokasiAwal;
     }
-
+    
     public String getDestinasi() {
         return destinasi;
     }
