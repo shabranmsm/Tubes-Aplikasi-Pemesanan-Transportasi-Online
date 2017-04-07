@@ -1,10 +1,13 @@
 package Model;
 
 public class Pesanan {
-    private String lokasiAwal, destinasi;
+    private String lokasiAwal
+    private String destinasi;
     private boolean status;
-    private int jarak,idPesanan;
+    private int jarak
+    private final String idPesanan;
     protected int harga;
+    private static int counter = 1;
 
     public Pesanan(String lokasiAwal, String destinasi, boolean status, int jarak, int idPesanan, int harga) {
         this.lokasiAwal = lokasiAwal;
@@ -42,6 +45,7 @@ public class Pesanan {
         else if (jarak > 8) {
             harga = jarak * 1500;
         }
+        
         return harga;
     }
 }

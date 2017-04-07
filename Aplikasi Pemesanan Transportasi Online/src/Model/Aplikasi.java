@@ -26,15 +26,11 @@ public class Aplikasi {
         return daftarPengemudi;
     }
            
-    public void loginConsole() {
+    public void login() {
         
     }
     
-    public void menuPengemudi() {
-        
-    }
-    
-    public void menuPelanggan() {
+    public void mainMenu() {
         
     }
 }

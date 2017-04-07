@@ -21,6 +21,4 @@ public class Pelanggan extends Orang{
     //List here
 
     //Getter here
-    
-    
 }

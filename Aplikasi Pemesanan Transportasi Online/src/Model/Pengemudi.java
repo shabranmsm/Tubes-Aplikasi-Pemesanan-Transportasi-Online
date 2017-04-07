@@ -3,7 +3,9 @@ import java.util.*;
 
 public class Pengemudi extends Orang{
     private List<Pesanan> pesanan = new ArrayList();
-    private String idDriver, nomorKendaraan;
+    private final String idDriver 
+    private String nomorKendaraan;
+    private static int counter = 1;
     private int idx;
     
     //Constructor here

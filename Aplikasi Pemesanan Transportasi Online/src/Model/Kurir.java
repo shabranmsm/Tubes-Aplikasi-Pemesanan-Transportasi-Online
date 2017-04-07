@@ -8,6 +8,6 @@ public class Kurir extends Pesanan {
 
     //Getter here
 
-    //Getter from Override getHarga() here
+    //Getter of Override getHarga() here
     
 }

@@ -11,4 +11,5 @@ package ViewConsole;
  */
 public class Console {
     
+    
 }
