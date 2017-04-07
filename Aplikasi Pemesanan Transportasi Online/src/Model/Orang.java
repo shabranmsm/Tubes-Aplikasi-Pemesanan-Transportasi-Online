@@ -1,11 +1,14 @@
-package aplikasi_pemesanan_transportasi_online;
+package Model;
 
 public abstract class Orang {
-    private String nama, nomorTelepon, password, username;
+    private String nama;
+    private String noTelp;
+    private String password;
+    private String username;
 
-    public Orang(String nama, String nomorTelepon, String password, String username) {
+    public Orang(String nama, String noTelp, String password, String username) {
         this.nama = nama;
-        this.nomorTelepon = nomorTelepon;
+        this.noTelp = noTelp;
         this.password = password;
         this.username = username;
     }
@@ -14,8 +17,8 @@ public abstract class Orang {
         return nama;
     }
 
-    public String getNomorTelepon() {
-        return nomorTelepon;
+    public String getNoTelp() {
+        return noTelp;
     }
 
     public String getPassword() {

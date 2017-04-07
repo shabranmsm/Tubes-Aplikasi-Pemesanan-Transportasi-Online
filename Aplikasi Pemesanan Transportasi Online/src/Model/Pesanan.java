@@ -1,4 +1,4 @@
-package aplikasi_pemesanan_transportasi_online;
+package Model;
 
 public class Pesanan {
     private String lokasiAwal, destinasi;
