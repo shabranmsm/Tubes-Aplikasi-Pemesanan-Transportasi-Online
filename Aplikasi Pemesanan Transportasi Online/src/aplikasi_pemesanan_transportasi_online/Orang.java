@@ -1,36 +1,28 @@
 package aplikasi_pemesanan_transportasi_online;
 
-public class Orang {
-    private String nama, email, nomorTelepon;
+public abstract class Orang {
+    private String nama, nomorTelepon, password, username;
 
-    public Orang(String nama, String email, String nomorTelepon) {
+    public Orang(String nama, String nomorTelepon, String password, String username) {
         this.nama = nama;
-        this.email = email;
         this.nomorTelepon = nomorTelepon;
+        this.password = password;
+        this.username = username;
     }
 
     public String getNama() {
         return nama;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public String getNomorTelepon() {
         return nomorTelepon;
     }
 
-    public void setNomorTelepon(String nomorTelepon) {
-        this.nomorTelepon = nomorTelepon;
+    public String getPassword() {
+        return password;
     }
 
+    public String getUsername() {
+        return username;
+    }   
 }

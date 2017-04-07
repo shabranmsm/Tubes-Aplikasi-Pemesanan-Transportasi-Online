@@ -1,24 +1,29 @@
 package aplikasi_pemesanan_transportasi_online;
 
 public class Kurir extends Pesanan {
-    private int beratMuatan;
-    private String dimensiMuatan;
+    private String jenisKendaraan, idKurir;
+    private int idx;
 
-    public Kurir(int beratMuatan, String dimensiMuatan, String lokasiAwal, String destinasi, int jarak, int harga) {
-        super(lokasiAwal, destinasi, jarak, harga);
-        this.beratMuatan = beratMuatan;
-        this.dimensiMuatan = dimensiMuatan;
+    public Kurir(String jenisKendaraan, String idKurir, int idx, String lokasiAwal, String destinasi, boolean status, int jarak, int idPesanan, int harga) {
+        super(lokasiAwal, destinasi, status, jarak, idPesanan, harga);
+        this.jenisKendaraan = jenisKendaraan;
+        this.idKurir = idKurir;
+        this.idx = idx;
     }
 
-    public int getBerat() {
-        return beratMuatan;
+    public String getJenisKendaraan() {
+        return jenisKendaraan;
     }
 
-    public String getDimensiPickup() {
-        return dimensiMuatan;
+    public String getIdKurir() {
+        return idKurir;
     }
 
+    @Override
     public int getHarga() {
         return harga;
     }
+
+    
+    
 }

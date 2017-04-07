@@ -1,28 +1,37 @@
 package aplikasi_pemesanan_transportasi_online;
+import java.util.*;
 
 public class Pelanggan extends Orang{
-    private Pesanan[] pesanan;
-    private String alamat;
+    private List<Pesanan> pesanan = new ArrayList();
+    private String email, idCustomer;
+    private int idx;
 
-    public Pelanggan(String alamat, String nama, String email, String nomorTelepon) {
-        super(nama, email, nomorTelepon);
-        this.alamat = alamat;
+    public Pelanggan(String email, String idCustomer, String nama, String nomorTelepon, String password, String username) {
+        super(nama, nomorTelepon, password, username);
+        this.email = email;
+        this.idCustomer = idCustomer;
     }
     
     public void createPesanan(Pesanan P) {
+
+    }
+
+    public void removePesanan(int idx) {
         
     }
 
-    public void removePesanan() {
-
-    }
-
-    public Pesanan[] getPesanan() {
+    public List<Pesanan> getPesanan() {
         return pesanan;
     }
 
-    public String getAlamat() {
-        return alamat;
+    public String getEmail() {
+        return email;
     }
 
+    public String getIdCustomer() {
+        return idCustomer;
+    }
+
+    
+    
 }

@@ -1,36 +1,34 @@
 package aplikasi_pemesanan_transportasi_online;
+import java.util.*;
 
 public class Pengemudi extends Orang{
-    private Pesanan[] pesanan;
-    private String nomorKendaraan;
-    private int rating;
+    private List<Pesanan> pesanan = new ArrayList();
+    private String idDriver, nomorKendaraan;
+    private int idx;
 
-    public Pengemudi(String nomorKendaraan, String nama, String email, String nomorTelepon) {
-        super(nama, email, nomorTelepon);
+    public Pengemudi(String idDriver, String nomorKendaraan, String nama, String nomorTelepon, String password, String username) {
+        super(nama, nomorTelepon, password, username);
+        this.idDriver = idDriver;
         this.nomorKendaraan = nomorKendaraan;
     }
-    
+       
     public void addPesanan(Pesanan p) {
-            
+
     }
 
-    public Pesanan[] getPesanan() {
+    public void removePesanan(int idx) {
+
+    }
+
+    public List<Pesanan> getPesanan() {
         return pesanan;
     }
 
-    public void removePesanan(Pesanan p) {
-
-    }
-
-    public int getRating() {
-        return rating;
-    }
-
-    public void setRating(int rating) {
-        this.rating = rating;
+    public String getIdDriver() {
+        return idDriver;
     }
 
     public String getNomorKendaraan() {
         return nomorKendaraan;
-    }
+    }    
 }
