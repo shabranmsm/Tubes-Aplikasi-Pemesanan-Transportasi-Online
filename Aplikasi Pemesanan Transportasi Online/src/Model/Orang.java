@@ -1,4 +1,13 @@
+// Nama     : Gabe Dimas Wicaksana
+// NIM      : 1301154245
+// Kelas    : IF 39-07
+//
+// OBJECT ORIENTED PROGRAMMING FINAL PROJECT - TELKOM UNIVERSITY 2017
+//
+
 package Model;
+import java.util.List;
+import sun.security.util.Password;
 
 public abstract class Orang {
     private String nama;
