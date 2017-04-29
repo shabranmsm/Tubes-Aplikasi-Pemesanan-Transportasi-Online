@@ -10,35 +10,32 @@ import java.util.*;
 
 public class Pengemudi extends Orang{
     private List<Pesanan> daftarPesanan = new ArrayList();
-    private final String idDriver 
+    private String idDriver;
     private String nomorKendaraan;
-    private static int counter = 1;
+    private static int counterD = 1;
     private int idx;
-    
-    //Constructor here
-    
-    public Pengemudi(String idDriver, String nomorKendaraan, String nama, String noTelp, String password, String username) {
+
+    public Pengemudi(String nomorKendaraan, String nama, String noTelp, String password, String username) {
         super(nama, noTelp, password, username);
-        this.idDriver = idDriver;
+        idDriver = "D-" + (counterD++);
         this.nomorKendaraan = nomorKendaraan;
-    
+    }
+
     public void addPesanan(Pesanan p) {
         daftarPesanan.add(p);
     }
 
     public void removePesanan(int idx) {
-        for(Pesanan P : daftarPesanan){
-            if(P.getIdPesanan().equals(idx)){
-                daftarPesanan.remove(P);
+        for (Pesanan p : daftarPesanan) {
+            if(p.getIdPesanan().equals(idx)) {
+                daftarPesanan.remove(p);
+            }
+        }
     }
-    
-    //List here
-    
-    public List<Pesanan> getDaftarPesanan() {
+
+    public List<Pesanan> getPesanan() {
         return daftarPesanan;
-    
-    //Getter here
-}
+    }
 
     public String getIdDriver() {
         return idDriver;
@@ -48,21 +45,13 @@ public class Pengemudi extends Orang{
         return nomorKendaraan;
     }
 
-    public static int getCounter() {
-        return counter;
-    }
-
-    public int getIdx() {
-        return idx;
-    }
-    
     @Override
     public String toString() {
-        return  "Username : \n" + getUsername()
-                + "Password : \n" + getPassword()
-                + "IdDriver : \n" + idDriver 
-                + "Nama : \n" + getNama() 
-                + "nomorKendaraan = \n" + nomorKendaraan
-                + "NoTelp : \n" + getNoTelp();
-    }
+        return  "Nama Pengemudi      : " + getNama() + "\n" +
+                "ID Pengemudi        : " + idDriver + "\n" +
+                "Nomor Kendaraan     : " + nomorKendaraan + "\n" +
+                "Nomor Telepon       : " + getNoTelp() + "\n" +
+                "Username            : " + getUsername() + "\n" +
+                "Password            : " + getPassword();
+    }   
 }
