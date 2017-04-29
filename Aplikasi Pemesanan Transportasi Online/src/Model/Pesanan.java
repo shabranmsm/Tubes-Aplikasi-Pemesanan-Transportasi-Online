@@ -1,15 +1,22 @@
+// Nama     : Hendrik Christian Janifer Simanjuntak
+// NIM      : 1301150021
+// Kelas    : IF 39-07
+//
+// OBJECT ORIENTED PROGRAMMING FINAL PROJECT - TELKOM UNIVERSITY 2017
+//
+
 package Model;
 
 public class Pesanan {
-    private String lokasiAwal
+    private String lokasiAwal;
     private String destinasi;
     private boolean status;
-    private int jarak
+    private int jarak;
     private final String idPesanan;
     protected int harga;
     private static int counter = 1;
 
-    public Pesanan(String lokasiAwal, String destinasi, boolean status, int jarak, int idPesanan, int harga) {
+    public Pesanan(String lokasiAwal, String destinasi, boolean status, int jarak, String idPesanan, int harga) {
         this.lokasiAwal = lokasiAwal;
         this.destinasi = destinasi;
         this.status = status;
@@ -34,7 +41,7 @@ public class Pesanan {
         return jarak;
     }
 
-    public int getIdPesanan() {
+    public String getIdPesanan() {
         return idPesanan;
     }
 

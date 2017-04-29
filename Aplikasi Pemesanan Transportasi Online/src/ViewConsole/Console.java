@@ -1,15 +1,217 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// Nama     : Gabe Dimas Wicaksana
+// NIM      : 1301154245
+// Kelas    : IF 39-07
+//
+// OBJECT ORIENTED PROGRAMMING FINAL PROJECT - TELKOM UNIVERSITY 2017
+//
+
 package ViewConsole;
 
-/**
- *
- * @author User
- */
+import Model.Aplikasi;
+import Model.Kurir;
+import Model.Orang;
+import Model.Pelanggan;
+import Model.Pengemudi;
+import Model.Pesanan;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 public class Console {
-    
-    
+
+    private Aplikasi model;
+    private Scanner inputInteger;
+    private Scanner inputString;
+
+    public Console(Aplikasi model) {
+        this.model = model;
+        inputInteger = new Scanner(System.in);
+        inputString = new Scanner(System.in);
+    }
+
+    public int olahInteger() throws Exception {
+        try {
+            return inputInteger.nextInt();
+        } catch (InputMismatchException ie) {
+            throw new InputMismatchException("Salah inputan, seharusnya integer !");
+        } catch (Exception ex) {
+            throw new Exception("Salah inputan, seharusnya integer !");
+        } finally {
+            inputInteger = new Scanner(System.in);
+        }
+    }
+
+    public void mainMenu() {
+        int n = 0;
+        do {
+            try {
+                System.out.println("    Transportasi Online    ");
+                System.out.println("=========================\n");
+                System.out.println("1. Register as Customer");
+                System.out.println("2. Login as Customer");
+                System.out.println("3. Register as Driver");
+                System.out.println("4. Login as Driver");
+                System.out.println("5. Exit");
+                System.out.print(" >> Pilihan >> ");
+                n = olahInteger();
+                switch (n) {
+                    case 1:
+                        System.out.println("//REGISTER AS CUSTOMER------------------\n");
+                        System.out.println("Nama Lengkap    : ");
+                        String namaCust = inputString.nextLine();
+                        System.out.println("Email           : ");
+                        String emailCust = inputString.nextLine();
+                        System.out.println("Nomor Telepon   : ");
+                        String no_telpCust = inputString.nextLine();
+                        System.out.println("Username        : ");
+                        String usernameCust = inputString.nextLine();
+                        System.out.println("Password        : ");
+                        String passwordCust = inputString.nextLine();
+                        model.addPelanggan(emailCust, namaCust, no_telpCust, passwordCust, usernameCust);
+                        break;
+
+                    case 2:
+                        System.out.println("//LOGIN AS CUSTOMER---------------------\n");
+                        System.out.println("Username        : ");
+                        String username_cust = inputString.nextLine();
+                        System.out.println("Password        : ");
+                        String password_cust = inputString.nextLine();
+                        if(model.loginPelanggan(username_cust, password_cust) == true) {
+                            System.out.println("Login success");
+                            menuPelanggan();
+                        } else {
+                            System.out.println("Login failed. Username or Password doesn't match !");
+                        }
+                        
+                        break;
+
+                    case 3:
+                        System.out.println("//REGISTER AS DRIVER--------------------\n");
+                        System.out.println("Nama Lengkap    : ");
+                        String namaDriv = inputString.nextLine();
+                        System.out.println("Nomor Kendaraan : ");
+                        String nopol = inputString.nextLine();
+                        System.out.println("Nomor Telepon   : ");
+                        String no_telpDriv = inputString.nextLine();
+                        System.out.println("Username        : ");
+                        String usernameDriv = inputString.nextLine();
+                        System.out.println("Password        : ");
+                        String passwordDriv = inputString.nextLine();
+                        model.addPengemudi(nopol, namaDriv, no_telpDriv, passwordDriv, usernameDriv);
+                        break;
+
+                    case 4:
+                        System.out.println("//LOGIN AS DRIVER-----------------------\n");
+                        System.out.println("Username        : ");
+                        String username_driv = inputString.nextLine();
+                        System.out.println("Password        : ");
+                        String password_driv = inputString.nextLine();
+                        if(model.loginPengemudi(username_driv, password_driv) == true) {
+                            System.out.println("Login success");
+                            menuPengemudi();
+                        } else {
+                            System.out.println("Login failed. Username or Password doesn't match !");
+                        }
+                        break;
+
+                    case 5:
+                        System.out.println("Thank You, goodbye !");
+                        break;
+                }
+            } catch (Exception ex) {
+                System.out.println("Error : " + ex.getMessage());
+            } finally {
+                inputInteger = new Scanner(System.in);
+                inputString = new Scanner(System.in);
+            }
+        } while (n != 5);
+    }
+
+    public void menuPelanggan() {
+        int n = 0;
+        do {
+            try {
+                System.out.println("------------CUSTOMER------------");
+                System.out.println("1.Create Order");
+                System.out.println("2.Cancel Order");
+                System.out.println("3. View All History Order");
+                System.out.println("4. Search Specific History Order");
+                System.out.println("5. Delete Account");
+                System.out.println("6. Logout");
+                System.out.print(" >> Pilihan >> ");
+                n = olahInteger();
+                switch (n) {
+                    case 1 :    
+                                break;
+                                
+                    case 2 : 
+                                break;
+                                
+                    case 3 :
+                                break;
+                                
+                    case 4 :    
+                                break;
+                                
+                    case 5 :    System.out.print("Masukkan ID Pelanggan yang ingin dihapus : ");
+                                inputString = new Scanner(System.in);
+                                String idCust = inputString.nextLine();
+                                model.deletePelanggan(idCust);
+                                break;
+                                
+                    case 6 :    System.out.println("You are logged out!");
+                                break;
+                }
+            } catch (Exception ex) {
+                System.out.println("Error !" + ex.getMessage());
+            } finally {
+                inputInteger = new Scanner(System.in);
+                inputString = new Scanner(System.in);
+            }
+        } while (n != 6);
+
+    }
+
+    public void menuPengemudi() {
+        int n = 0;
+        do {
+            try {
+                System.out.println("------------DRIVER------------");
+                System.out.println("1. Add Order");
+                System.out.println("2. Remove Order");
+                System.out.println("3. View All History Order");
+                System.out.println("4. Search Specific Order");
+                System.out.println("5. Delete Account");
+                System.out.println("6. Logout");
+                System.out.print(" >> Pilihan >> ");
+                n = olahInteger();
+                switch (n) {
+                    case 1 :    
+                                break;
+                                
+                    case 2 : 
+                                break;
+                                
+                    case 3 :    
+                                break;
+                                
+                    case 4 :    
+                                break;
+                                
+                    case 5 :    System.out.print("Masukkan ID Pengemudi yang ingin dihapus : ");
+                                inputString = new Scanner(System.in);
+                                String idDriv = inputString.nextLine();
+                                model.deletePengemudi(idDriv);
+                                break;
+                                
+                    case 6 :    System.out.println("You are logged out!");
+                                break;
+                }
+            } catch (Exception ex) {
+                System.out.println("Error !" + ex.getMessage());
+            } finally {
+                inputInteger = new Scanner(System.in);
+                inputString = new Scanner(System.in);
+            }
+        } while (n != 6);
+    }
 }
