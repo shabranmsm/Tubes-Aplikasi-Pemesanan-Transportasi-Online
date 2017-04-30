@@ -11,62 +11,53 @@ import java.util.*;
 public class Pelanggan extends Orang{
     private List<Pesanan> daftarPesanan;
     private final String idCustomer;
-    private static int counter = 1;
+    private static int counterC = 1;
     private String email;
     private int idx;
 
-    //Constructor here
-
-    public Pelanggan(String idCustomer, String email, String nama, String noTelp, String password, String username) {
+    public Pelanggan(String email, String nama, String noTelp, String password, String username) {
         super(nama, noTelp, password, username);
-        this.idCustomer = idCustomer;
         this.email = email;
+        idCustomer = "C-" + (counterC++);
+    }
+       
+    public void createPesanan(String lokasiAwal, String destinasi, boolean status, String idPesanan, int harga) {
+        Pesanan order = new Pesanan(lokasiAwal,destinasi,status,idPesanan,harga);
+        daftarPesanan.add(order);
     }
     
-    
-    public void createPesanan(Pesanan P) {
-        daftarPesanan.add(P);
+    public void createPesananKurir(String jenisKendaraan, String lokasiAwal, String destinasi, boolean status, String idPesanan, int harga) {
+        Kurir kurir = new Kurir(jenisKendaraan,lokasiAwal,destinasi,status,idPesanan,harga);
+        daftarPesanan.add(kurir);
     }
 
     public void removePesanan(int idx) {
-        for(Pesanan P : daftarPesanan){
-            if(P.getIdPesanan().equals(idx)){
+        for (Pesanan P : daftarPesanan) {
+            if (P.getIdPesanan().equals(idx)) {
                 daftarPesanan.remove(P);
             }
         }
     }
 
-    //List here
-    
-     public List<Pesanan> getDaftarPesanan() {
+    public List<Pesanan> getPesanan(int idx) {
         return daftarPesanan;
-    }
-     
-    //Getter here
-
-    public String getIdCustomer() {
-        return idCustomer;
-    }
-
-    public static int getCounter() {
-        return counter;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public int getIdx() {
-        return idx;
+    public String getIdCustomer() {
+        return idCustomer;
     }
 
     @Override
     public String toString() {
-        return  "Username : \n" + getUsername()
-                + "Password : \n" + getPassword()
-                + "IdCustomer : \n" + idCustomer 
-                + "Nama : \n" + getNama() 
-                + "Email = \n" + email 
-                + "NoTelp : \n" + getNoTelp();
+        return  "Nama Pelanggan      : " + getNama() + "\n" +
+                "ID Pelanggan        : " + idCustomer + "\n" +
+                "Email               : " + email + "\n" +
+                "Nomor Telepon       : " + getNoTelp() + "\n" +
+                "Username            : " + getUsername() + "\n" +
+                "Password            : " + getPassword();
     }
 }
