@@ -12,15 +12,44 @@ import java.util.stream.Collectors;
 public class Aplikasi {
     private List<Pelanggan> daftarPelanggan;
     private List<Pengemudi> daftarPengemudi;
-
+    private List<Orang> daftarOrang;
+    private String IdLog;
+    
     public Aplikasi() {
         daftarPelanggan = new ArrayList();
         daftarPengemudi = new ArrayList();
     }
     
+//    public boolean loginPelanggan(String username, String password) {
+//        int i = 0;
+//        for (Orang o : daftarOrang) {
+//            if(o.getUsername().equals(username) && o.getPassword().equals(password)) {
+//                
+//                return true;               
+////                return c;
+//            }
+//        }
+//        return false;
+//    }
+    
     //PELANGGAN------------------------------------------------------------------------------------------------------------------
     public void addPelanggan(String email, String nama, String noTelp, String password, String username) {
-        daftarPelanggan.add(new Pelanggan(email, nama, noTelp, password, username));
+//        ArrayList <Pelanggan> daftarPelanggan;
+//        daftarPelanggan = new ArrayList();
+        Pelanggan cust = new Pelanggan(email, nama, noTelp, password, username);
+        daftarPelanggan.add(cust);        
+    }
+    
+    public boolean createPesanan(String lokasiAwal, String destinasi) {
+        
+        for (Pelanggan c : daftarPelanggan){
+            if(c.getIdCustomer().equals(IdLog)) {
+                c.createPesanan(lokasiAwal, destinasi);
+                System.out.println(IdLog);
+                return true;
+            }
+        }
+        return false;
     }
     
     public Pelanggan getPelanggan(String id) {
@@ -35,13 +64,24 @@ public class Aplikasi {
     public boolean loginPelanggan(String username, String password) {
         for (Pelanggan c : daftarPelanggan){
             if(c.getUsername().equals(username) && c.getPassword().equals(password)) {
-                return true;               
+                IdLog = c.getIdCustomer();
+                System.out.println(IdLog);
+//                IdLog = c.getId();
+                   return true;               
 //                return c;
             }
         }
         return false;
     }
     
+    public void searchPelanggan(String searchPelanggan) {
+        for (Pelanggan c : daftarPelanggan){
+            if(c.getIdCustomer().equals(searchPelanggan)) {
+                System.out.println(c.getIdCustomer());
+                
+            }
+        }
+    }
 //    public boolean cekPelanggan(Pelanggan p) {
 //        return daftarPelanggan.contains(p);
 //    }

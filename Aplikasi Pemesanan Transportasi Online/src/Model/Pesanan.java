@@ -15,7 +15,7 @@ public class Pesanan {
     protected int harga;
     private static int counterO = 1;
 
-    public Pesanan(String lokasiAwal, String destinasi, boolean status, String idPesanan, int harga) {
+    public Pesanan(String lokasiAwal, String destinasi, boolean status,int harga) {
         this.lokasiAwal = lokasiAwal;
         this.destinasi = destinasi;
         this.status = status;
@@ -40,7 +40,7 @@ public class Pesanan {
     }
 
     public int getHarga() {
-        return harga;
+        return 21000;
     }
 
     @Override

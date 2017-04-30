@@ -7,27 +7,32 @@
 
 package Model;
 import java.util.*;
+import Model.Pesanan;
 
 public class Pelanggan extends Orang{
     private List<Pesanan> daftarPesanan;
+    
     private final String idCustomer;
     private static int counterC = 1;
-    private String email;
     private int idx;
 
     public Pelanggan(String email, String nama, String noTelp, String password, String username) {
         super(nama, noTelp, password, username);
-        this.email = email;
         idCustomer = "C-" + (counterC++);
+        daftarPesanan = new ArrayList<Pesanan>();
     }
        
-    public void createPesanan(String lokasiAwal, String destinasi, boolean status, String idPesanan, int harga) {
-        Pesanan order = new Pesanan(lokasiAwal,destinasi,status,idPesanan,harga);
-        daftarPesanan.add(order);
+    public void createPesanan(String lokasiAwal, String destinasi/*, String idPesanan*/) {
+        int harga = 20000;
+        boolean status = true;
+        Pesanan order = new Pesanan(lokasiAwal,destinasi,status,harga);
+        daftarPesanan.add(new Pesanan(lokasiAwal,destinasi,status,harga));
     }
     
-    public void createPesananKurir(String jenisKendaraan, String lokasiAwal, String destinasi, boolean status, String idPesanan, int harga) {
-        Kurir kurir = new Kurir(jenisKendaraan,lokasiAwal,destinasi,status,idPesanan,harga);
+    public void createPesananKurir(String lokasiAwal, String destinasi) {
+        int harga = 150000;
+        boolean status = true;
+        Kurir kurir = new Kurir(lokasiAwal,destinasi,status,harga);
         daftarPesanan.add(kurir);
     }
 
@@ -43,19 +48,16 @@ public class Pelanggan extends Orang{
         return daftarPesanan;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
     public String getIdCustomer() {
         return idCustomer;
     }
+    
+    
 
     @Override
     public String toString() {
         return  "Nama Pelanggan      : " + getNama() + "\n" +
                 "ID Pelanggan        : " + idCustomer + "\n" +
-                "Email               : " + email + "\n" +
                 "Nomor Telepon       : " + getNoTelp() + "\n" +
                 "Username            : " + getUsername() + "\n" +
                 "Password            : " + getPassword();

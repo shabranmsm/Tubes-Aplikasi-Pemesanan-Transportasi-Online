@@ -21,6 +21,7 @@ public class Console {
     private Aplikasi model;
     private Scanner inputInteger;
     private Scanner inputString;
+    private String TempData;
 
     public Console(Aplikasi model) {
         this.model = model;
@@ -67,6 +68,7 @@ public class Console {
                         System.out.println("Password        : ");
                         String passwordCust = inputString.nextLine();
                         model.addPelanggan(emailCust, namaCust, no_telpCust, passwordCust, usernameCust);
+//                        model.getPelanggan(0);
                         break;
 
                     case 2:
@@ -140,7 +142,15 @@ public class Console {
                 System.out.print(" >> Pilihan >> ");
                 n = olahInteger();
                 switch (n) {
-                    case 1 :    
+                    case 1 :    System.out.println("Lokasi Awal     : ");
+                                String lokasiAwal = inputString.nextLine();
+                                System.out.println("Destinasi       : ");
+                                String destinasi = inputString.nextLine();
+                                if((model.createPesanan(lokasiAwal, destinasi)) == true) {
+                                    System.out.println("Order has been succeded");
+                                } else { 
+                                    System.out.println("Failed !");
+                                }
                                 break;
                                 
                     case 2 : 
@@ -149,7 +159,9 @@ public class Console {
                     case 3 :
                                 break;
                                 
-                    case 4 :    
+                    case 4 :    System.out.println("Search id    : ");
+                                String TempData = inputString.nextLine();
+                                model.searchPelanggan(TempData);
                                 break;
                                 
                     case 5 :    System.out.print("Masukkan ID Pelanggan yang ingin dihapus : ");
