@@ -8,13 +8,24 @@
 package Model;
 
 public class Kurir extends Pesanan {
-    private String jenisKendaraan, idKurir;
+    private String jenisKendaraan;
+    private static int counterO = 1;
     private int idx;
 
-    //Constructor here
+    public Kurir(String jenisKendaraan, String lokasiAwal, String destinasi, boolean status, String idPesanan, int harga) {
+        super(lokasiAwal, destinasi, status, idPesanan, harga);
+        this.jenisKendaraan = jenisKendaraan;
+        idPesanan = "O-" + (counterO++);
+    }
 
-    //Getter here
+    public String getJenisKendaraan() {
+        return jenisKendaraan;
+    }
 
-    //Getter of Override getHarga() here
+    @Override
+    public int getHarga() {
+        return harga;
+    }
     
 }
+
