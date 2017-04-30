@@ -32,7 +32,7 @@ public class login_register2 extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        txNameRegDriver = new javax.swing.JTextField();
+        txNameRegisterDriver = new javax.swing.JTextField();
         txUsernameRegDriver = new javax.swing.JTextField();
         txPassRegDriver = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -83,7 +83,7 @@ public class login_register2 extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 24)); // NOI18N
         jLabel1.setText("Register");
 
-        txNameRegDriver.setPreferredSize(new java.awt.Dimension(59, 25));
+        txNameRegisterDriver.setPreferredSize(new java.awt.Dimension(59, 25));
 
         txUsernameRegDriver.setPreferredSize(new java.awt.Dimension(59, 25));
 
@@ -126,7 +126,7 @@ public class login_register2 extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txNameRegDriver, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txNameRegisterDriver, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -159,7 +159,7 @@ public class login_register2 extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txNameRegDriver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txNameRegisterDriver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -303,7 +303,7 @@ public class login_register2 extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField txEmailRegDriver;
-    private javax.swing.JTextField txNameRegDriver;
+    private javax.swing.JTextField txNameRegisterDriver;
     private javax.swing.JTextField txPassLoginDriver;
     private javax.swing.JTextField txPassRegDriver;
     private javax.swing.JTextField txPhoneRegDriver;
