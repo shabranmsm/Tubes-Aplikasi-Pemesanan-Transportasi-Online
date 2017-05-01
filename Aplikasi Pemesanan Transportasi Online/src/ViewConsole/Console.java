@@ -255,7 +255,7 @@ public class Console {
                         break;
 
                     case 5:
-                        
+                        break;
 
                     case 6:
                         System.out.println("You are logged out!");
