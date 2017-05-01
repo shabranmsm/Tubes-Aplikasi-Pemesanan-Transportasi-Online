@@ -35,7 +35,7 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                  <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnLogoutCr" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
@@ -68,7 +68,7 @@
                   <Component id="jPanel4" pref="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton5" min="-2" pref="38" max="-2" attributes="0"/>
+              <Component id="btnLogoutCr" min="-2" pref="38" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="canvas1" min="-2" max="-2" attributes="0"/>
           </Group>
@@ -108,8 +108,8 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jButton1" pref="255" max="32767" attributes="0"/>
-                      <Component id="txOrder" alignment="0" max="32767" attributes="0"/>
+                      <Component id="btnCancelOrderCr" pref="255" max="32767" attributes="0"/>
+                      <Component id="btnOrderCr" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -117,8 +117,8 @@
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txLokasiAwal" pref="190" max="32767" attributes="0"/>
-                              <Component id="txDestinasi" max="32767" attributes="0"/>
+                              <Component id="txLokasiAwalCr" pref="190" max="32767" attributes="0"/>
+                              <Component id="txDestinasiCr" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -133,19 +133,19 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txLokasiAwal" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txLokasiAwalCr" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txDestinasi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txDestinasiCr" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txOrder" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="btnOrderCr" min="-2" pref="32" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton1" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="btnCancelOrderCr" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -169,11 +169,11 @@
             <Property name="text" type="java.lang.String" value="Destinasi"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txLokasiAwal">
+        <Component class="javax.swing.JTextField" name="txLokasiAwalCr">
         </Component>
-        <Component class="javax.swing.JTextField" name="txDestinasi">
+        <Component class="javax.swing.JTextField" name="txDestinasiCr">
         </Component>
-        <Component class="javax.swing.JButton" name="txOrder">
+        <Component class="javax.swing.JButton" name="btnOrderCr">
           <Properties>
             <Property name="text" type="java.lang.String" value="Order"/>
           </Properties>
@@ -186,7 +186,7 @@
             <Property name="text" type="java.lang.String" value="CANCEL ORDER"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="btnCancelOrderCr">
           <Properties>
             <Property name="text" type="java.lang.String" value="CANCEL"/>
           </Properties>
@@ -210,7 +210,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txOrder1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnOrderKurirCr" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -218,14 +218,14 @@
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txLokasiAwal1" alignment="0" pref="190" max="32767" attributes="0"/>
-                                      <Component id="txDestinasi1" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="txLokasiAwalKurirCr" alignment="0" pref="190" max="32767" attributes="0"/>
+                                      <Component id="txDestinasiKurirCr" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jButton2" alignment="0" pref="259" max="32767" attributes="0"/>
+                      <Component id="btnCancelKurirCr" alignment="0" pref="259" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -245,19 +245,19 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txLokasiAwal1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txLokasiAwalKurirCr" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txDestinasi1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txDestinasiKurirCr" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txOrder1" min="-2" pref="32" max="-2" attributes="0"/>
+                  <Component id="btnOrderKurirCr" min="-2" pref="32" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="btnCancelKurirCr" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -276,16 +276,16 @@
             <Property name="text" type="java.lang.String" value="Lokasi Awal"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txLokasiAwal1">
+        <Component class="javax.swing.JTextField" name="txLokasiAwalKurirCr">
         </Component>
-        <Component class="javax.swing.JTextField" name="txDestinasi1">
+        <Component class="javax.swing.JTextField" name="txDestinasiKurirCr">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="text" type="java.lang.String" value="Destinasi"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="txOrder1">
+        <Component class="javax.swing.JButton" name="btnOrderKurirCr">
           <Properties>
             <Property name="text" type="java.lang.String" value="Order"/>
           </Properties>
@@ -298,7 +298,7 @@
             <Property name="text" type="java.lang.String" value="CREATE KURIR"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="btnCancelKurirCr">
           <Properties>
             <Property name="text" type="java.lang.String" value="CANCEL"/>
           </Properties>
@@ -326,7 +326,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnShowOrderCr" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -341,7 +341,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="192" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnShowOrderCr" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -362,7 +362,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea1">
+            <Component class="javax.swing.JTextArea" name="jTextShowOrderCr">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
@@ -370,7 +370,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButton3">
+        <Component class="javax.swing.JButton" name="btnShowOrderCr">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
@@ -402,11 +402,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jTextField1" max="32767" attributes="0"/>
+                          <Component id="jTextIndeksCr" max="32767" attributes="0"/>
                       </Group>
                       <Component id="jScrollPane2" alignment="1" pref="259" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnShowSearchCr" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -421,12 +421,12 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jTextIndeksCr" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" pref="164" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnShowSearchCr" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -443,13 +443,10 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
-            <Property name="text" type="java.lang.String" value="ID Pesanan"/>
+            <Property name="text" type="java.lang.String" value="Indeks"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jTextField1"/>
-          </Properties>
+        <Component class="javax.swing.JTextField" name="jTextIndeksCr">
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane2">
           <AuxValues>
@@ -458,7 +455,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTextArea" name="jTextArea2">
+            <Component class="javax.swing.JTextArea" name="jTextSeacrhOrderCr">
               <Properties>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>
@@ -466,7 +463,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButton4">
+        <Component class="javax.swing.JButton" name="btnShowSearchCr">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="0"/>
@@ -476,7 +473,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="btnLogoutCr">
       <Properties>
         <Property name="text" type="java.lang.String" value="Logout"/>
       </Properties>
