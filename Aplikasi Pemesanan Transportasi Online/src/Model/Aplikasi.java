@@ -6,6 +6,11 @@
 //
 package Model;
 
+import Database.FileDatabase;
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -13,6 +18,7 @@ public class Aplikasi {
 
     private List<Pelanggan> daftarPelanggan;
     private List<Pengemudi> daftarPengemudi;
+    private FileDatabase save;
    
     private String IdLog;
     private String IdLogDriver;
@@ -166,4 +172,53 @@ public class Aplikasi {
         List idDriv = daftarPengemudi.stream().map(d -> d.toString()).collect(Collectors.toList());
         return (String[]) idDriv.stream().toArray(size -> new String[size]);
     }
+    
+    // Database Pelanggan
+    public void loadPelaggan() throws FileNotFoundException, IOException{
+        try {
+            daftarPelanggan = (ArrayList<Pelanggan>) save.getObject("FilePelanggan.dat");
+        } catch (FileNotFoundException ex) {
+            File f = new File("FilePelanggan.dat");
+            f.createNewFile();
+        } catch (EOFException ex) {
+            daftarPelanggan = new ArrayList<>();
+        } catch (IOException | ClassNotFoundException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+    
+     public void savePelanggan() throws FileNotFoundException, IOException {
+        try {
+            save.saveObject(daftarPelanggan, "FilePelanggan.dat");
+        } catch (FileNotFoundException ex) {
+            throw new FileNotFoundException("file not found");
+        } catch (IOException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+     
+    // Database Pengemudi
+    public void loadPengemudi() throws FileNotFoundException, IOException{
+        try {
+            daftarPengemudi = (ArrayList<Pengemudi>) save.getObject("FilePengemudi.dat");
+        } catch (FileNotFoundException ex) {
+            File f = new File("FilePengemudi.dat");
+            f.createNewFile();
+        } catch (EOFException ex) {
+            daftarPengemudi = new ArrayList<>();
+        } catch (IOException | ClassNotFoundException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+    
+     public void savePengemudi() throws FileNotFoundException, IOException {
+        try {
+            save.saveObject(daftarPengemudi, "FilePengemudi.dat");
+        } catch (FileNotFoundException ex) {
+            throw new FileNotFoundException("file not found");
+        } catch (IOException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+            
 }
