@@ -4,14 +4,14 @@
 //
 // OBJECT ORIENTED PROGRAMMING FINAL PROJECT - TELKOM UNIVERSITY 2017
 //
-
 package Model;
+
 import java.util.*;
 import Model.Pesanan;
 
-public class Pelanggan extends Orang{
+public class Pelanggan extends Orang {
+
     private List<Pesanan> daftarPesanan;
-    
     private final String idCustomer;
     private static int counterC = 1;
     private int idx;
@@ -21,27 +21,38 @@ public class Pelanggan extends Orang{
         idCustomer = "C-" + (counterC++);
         daftarPesanan = new ArrayList<Pesanan>();
     }
-       
-    public void createPesanan(String lokasiAwal, String destinasi/*, String idPesanan*/) {
+  
+    public void createPesanan(String lokasiAwal, String destinasi) {
         int harga = 20000;
         boolean status = true;
-        Pesanan order = new Pesanan(lokasiAwal,destinasi,status,harga);
-        daftarPesanan.add(new Pesanan(lokasiAwal,destinasi,status,harga));
+        Pesanan order = new Pesanan(lokasiAwal, destinasi, status, harga);
+        daftarPesanan.add(order);
     }
-    
+
     public void createPesananKurir(String lokasiAwal, String destinasi) {
         int harga = 150000;
         boolean status = true;
-        Kurir kurir = new Kurir(lokasiAwal,destinasi,status,harga);
+        Kurir kurir = new Kurir(lokasiAwal, destinasi, status, harga);
         daftarPesanan.add(kurir);
     }
 
-    public void removePesanan(int idx) {
+    public void removePesanan(String idPesanan) {
         for (Pesanan P : daftarPesanan) {
-            if (P.getIdPesanan().equals(idx)) {
+            if (P.getIdPesanan().equals(idPesanan)) {
                 daftarPesanan.remove(P);
             }
         }
+    }
+
+    public void searchPesanan(String idPesanan) {
+
+    }
+  
+    public void showAllPesanan() {
+        for (Pesanan p : daftarPesanan) {
+            p.toString();
+        }
+
     }
 
     public List<Pesanan> getPesanan(int idx) {
@@ -56,10 +67,10 @@ public class Pelanggan extends Orang{
 
     @Override
     public String toString() {
-        return  "Nama Pelanggan      : " + getNama() + "\n" +
-                "ID Pelanggan        : " + idCustomer + "\n" +
-                "Nomor Telepon       : " + getNoTelp() + "\n" +
-                "Username            : " + getUsername() + "\n" +
-                "Password            : " + getPassword();
+        return "Nama Pelanggan      : " + getNama() + "\n"
+                + "ID Pelanggan        : " + idCustomer + "\n"
+                + "Nomor Telepon       : " + getNoTelp() + "\n"
+                + "Username            : " + getUsername() + "\n"
+                + "Password            : " + getPassword();
     }
 }

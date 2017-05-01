@@ -25,9 +25,9 @@ public class Pengemudi extends Orang{
         daftarPesanan.add(p);
     }
 
-    public void removePesanan(int idx) {
+    public void removePesanan(String idPesanan) {
         for (Pesanan p : daftarPesanan) {
-            if(p.getIdPesanan().equals(idx)) {
+            if(p.getIdPesanan().equals(idPesanan)) {
                 daftarPesanan.remove(p);
             }
         }

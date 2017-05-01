@@ -8,12 +8,12 @@
 package Model;
 
 public class Kurir extends Pesanan {
-    private static int counterO = 1;
+    private static int counterK = 1;
     private int idx;
 
     public Kurir(String lokasiAwal, String destinasi, boolean status, int harga) {
         super(lokasiAwal, destinasi, status, harga);
-        String idPesanan = "O-" + (counterO++);
+        String idPesanan = "K-" + (counterK++);
     }
 
     @Override

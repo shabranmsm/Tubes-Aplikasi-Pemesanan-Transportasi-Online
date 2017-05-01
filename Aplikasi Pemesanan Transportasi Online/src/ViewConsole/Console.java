@@ -133,12 +133,13 @@ public class Console {
         do {
             try {
                 System.out.println("------------CUSTOMER------------");
-                System.out.println("1.Create Order");
-                System.out.println("2.Cancel Order");
-                System.out.println("3. View All History Order");
-                System.out.println("4. Search Specific History Order");
-                System.out.println("5. Delete Account");
-                System.out.println("6. Logout");
+                System.out.println("1. Create Order");
+                System.out.println("2. Create Kurir");
+                System.out.println("3. Cancel Order/Kurir");
+                System.out.println("4. Show All History Order");
+                System.out.println("5. Search History Order");
+                System.out.println("6. Delete Account");
+                System.out.println("7. Logout");
                 System.out.print(" >> Pilihan >> ");
                 n = olahInteger();
                 switch (n) {
@@ -152,25 +153,39 @@ public class Console {
                                     System.out.println("Failed !");
                                 }
                                 break;
+                            
+                    case 2 :    break;
                                 
-                    case 2 : 
+                    case 3 :    System.out.println("Masukkan ID dari pesanan yang ingin dihapus : ");
+                                String id = inputString.nextLine();
+                                if((model.removePesanan(id)) == true) {
+                                    System.out.println("Order has been removed");
+                                } else { 
+                                    System.out.println("Failed !");
+                                }
                                 break;
                                 
-                    case 3 :
+                    case 4 :    model.showAllPesanan();
                                 break;
-                                
-                    case 4 :    System.out.println("Search id    : ");
+
+                    case 5 :    System.out.println("Search id    : ");
                                 String TempData = inputString.nextLine();
                                 model.searchPelanggan(TempData);
                                 break;
                                 
-                    case 5 :    System.out.print("Masukkan ID Pelanggan yang ingin dihapus : ");
+                    case 6 :    System.out.print("Masukkan ID Pelanggan yang ingin dihapus : ");
                                 inputString = new Scanner(System.in);
                                 String idCust = inputString.nextLine();
-                                model.deletePelanggan(idCust);
+                                if((model.deletePelanggan(idCust)) == true) {
+                                    System.out.println("Account has been deleted \n");
+                                    mainMenu();
+                                } else {
+                                    System.out.println("Account cannot be deleted");
+                                }
+                                
                                 break;
                                 
-                    case 6 :    System.out.println("You are logged out!");
+                    case 7 :    System.out.println("You are logged out!");
                                 break;
                 }
             } catch (Exception ex) {
@@ -179,7 +194,7 @@ public class Console {
                 inputInteger = new Scanner(System.in);
                 inputString = new Scanner(System.in);
             }
-        } while (n != 6);
+        } while (n != 7);
 
     }
 
@@ -212,7 +227,12 @@ public class Console {
                     case 5 :    System.out.print("Masukkan ID Pengemudi yang ingin dihapus : ");
                                 inputString = new Scanner(System.in);
                                 String idDriv = inputString.nextLine();
-                                model.deletePengemudi(idDriv);
+                                if((model.deletePengemudi(idDriv)) == true) {
+                                    System.out.println("Account has been deleted \n");
+                                    mainMenu();
+                                } else {
+                                    System.out.println("Account cannot be deleted");
+                                }
                                 break;
                                 
                     case 6 :    System.out.println("You are logged out!");
