@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class FileDatabase {
+public class FileData {
     
     public void saveObject(Object o, String file)
             throws FileNotFoundException, IOException{

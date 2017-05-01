@@ -6,7 +6,7 @@
 //
 package Model;
 
-import Database.FileDatabase;
+import Database.FileData;
 import java.io.EOFException;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,14 +18,14 @@ public class Aplikasi {
 
     private List<Pelanggan> daftarPelanggan;
     private List<Pengemudi> daftarPengemudi;
-    private FileDatabase save;
-   
+    private FileData save;   
     private String IdLog;
     private String IdLogDriver;
 
     public Aplikasi() {
         daftarPelanggan = new ArrayList();
         daftarPengemudi = new ArrayList();
+        save = new FileData();
     }
 
     //PELANGGAN------------------------------------------------------------------------------------------------------------------
@@ -69,6 +69,7 @@ public class Aplikasi {
         return false;
     }
     
+    
     public Pelanggan getPelanggan(String id) {
         return daftarPelanggan.stream().filter(c -> c.getIdCustomer().equals(id)).findFirst().orElse(null);
     }
@@ -77,7 +78,7 @@ public class Aplikasi {
         Pelanggan c = daftarPelanggan.get(idx);
         return c;
     }
-
+    
     public boolean loginPelanggan(String username, String password) {
         for (Pelanggan c : daftarPelanggan) {
             if (c.getUsername().equals(username) && c.getPassword().equals(password)) {
@@ -88,13 +89,10 @@ public class Aplikasi {
         }
         return false;
     }
-
-    public void searchPelanggan(String searchPelanggan) {
-        for (Pelanggan c : daftarPelanggan) {
-            if (c.getIdCustomer().equals(searchPelanggan)) {
-                System.out.println(c.getIdCustomer());
-
-            }
+    
+    public void searchPesanan(String id) {
+        for(Pelanggan c : daftarPelanggan) {
+            c.getPesanan(id);
         }
     }
 
@@ -173,6 +171,8 @@ public class Aplikasi {
         return (String[]) idDriv.stream().toArray(size -> new String[size]);
     }
     
+    
+    //SAVE & LOAD TO FILE--------------------------------------------------------------------------------------------------------
     // Database Pelanggan
     public void loadPelaggan() throws FileNotFoundException, IOException{
         try {
