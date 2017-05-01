@@ -13,6 +13,7 @@ public class Aplikasi {
 
     private List<Pelanggan> daftarPelanggan;
     private List<Pengemudi> daftarPengemudi;
+   
     private String IdLog;
     private String IdLogDriver;
 
@@ -23,7 +24,20 @@ public class Aplikasi {
 
     //PELANGGAN------------------------------------------------------------------------------------------------------------------
     public void addPelanggan(String email, String nama, String noTelp, String password, String username) {
-        daftarPelanggan.add(new Pelanggan(email, nama, noTelp, password, username));
+        Pelanggan cust = new Pelanggan(email, nama, noTelp, password, username);
+        daftarPelanggan.add(cust);        
+    }
+    
+    public boolean createPesanan(String lokasiAwal, String destinasi) {
+        
+        for (Pelanggan c : daftarPelanggan){
+            if(c.getIdCustomer().equals(IdLog)) {
+                c.createPesanan(lokasiAwal, destinasi);
+                System.out.println(IdLog);
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean createPesanan(String lokasiAwal, String destinasi) {

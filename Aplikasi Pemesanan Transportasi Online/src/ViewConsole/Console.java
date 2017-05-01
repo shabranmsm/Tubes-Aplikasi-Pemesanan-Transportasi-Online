@@ -167,7 +167,7 @@ public class Console {
                                 
                     case 4 :    model.showAllPesanan();
                                 break;
-                                
+
                     case 5 :    System.out.println("Search id    : ");
                                 String TempData = inputString.nextLine();
                                 model.searchPelanggan(TempData);

@@ -12,7 +12,6 @@ import Model.Pesanan;
 public class Pelanggan extends Orang {
 
     private List<Pesanan> daftarPesanan;
-
     private final String idCustomer;
     private static int counterC = 1;
     private int idx;
@@ -22,7 +21,7 @@ public class Pelanggan extends Orang {
         idCustomer = "C-" + (counterC++);
         daftarPesanan = new ArrayList<Pesanan>();
     }
-
+  
     public void createPesanan(String lokasiAwal, String destinasi) {
         int harga = 20000;
         boolean status = true;
@@ -48,7 +47,7 @@ public class Pelanggan extends Orang {
     public void searchPesanan(String idPesanan) {
 
     }
-
+  
     public void showAllPesanan() {
         for (Pesanan p : daftarPesanan) {
             p.toString();
@@ -63,6 +62,8 @@ public class Pelanggan extends Orang {
     public String getIdCustomer() {
         return idCustomer;
     }
+    
+    
 
     @Override
     public String toString() {
