@@ -90,10 +90,13 @@ public class Aplikasi {
         return false;
     }
     
-    public void searchPesanan(String id) {
+    public boolean searchPesanan(String id) {
         for(Pelanggan c : daftarPelanggan) {
-            c.getPesanan(id);
+//            c.getPesanan(id);
+            System.out.println(c.getPesanan(id));
+            return true;
         }
+        return false;
     }
 
     public boolean deletePelanggan(String id) {
