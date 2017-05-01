@@ -20,7 +20,6 @@ public class Console {
     private Aplikasi model;
     private Scanner inputInteger;
     private Scanner inputString;
-    private String TempData;
 
     public Console(Aplikasi model) {
         this.model = model;
@@ -160,10 +159,11 @@ public class Console {
                 System.out.println("------------CUSTOMER------------");
                 System.out.println("1. Create Order");
                 System.out.println("2. Create Kurir");
-                System.out.println("3. Cancel Order/Kurir");
-                System.out.println("4. Show All History Order");
-                System.out.println("5. Search History Order");
-                System.out.println("6. Logout");
+                System.out.println("3. Cancel Order");
+                System.out.println("4. Cancel Kurir");
+                System.out.println("5. Show All History Order");
+                System.out.println("6. Search History Order");
+                System.out.println("7. Logout");
                 System.out.print(" >> Pilihan >> ");
                 n = olahInteger();
                 switch (n) {
@@ -180,6 +180,15 @@ public class Console {
                         break;
 
                     case 2:
+                        System.out.println("Lokasi Awal     : ");
+                        String lokasiAwalKurir = inputString.nextLine();
+                        System.out.println("Destinasi       : ");
+                        String destinasiKurir = inputString.nextLine();
+                        if ((model.createKurir(lokasiAwalKurir, destinasiKurir)) == true) {
+                            System.out.println("Order has been succeded\n");
+                        } else {
+                            System.out.println("Failed !\n");
+                        }
                         break;
 
                     case 3:
@@ -197,12 +206,16 @@ public class Console {
                         break;
 
                     case 5:
-                        System.out.println("Search id    : ");
-                        String TempData = inputString.nextLine();
-                        model.searchPelanggan(TempData);
+                        
                         break;
 
-                    case 6:
+                    case 6: System.out.print("Masukkan id pesanan : "); 
+                            String idOrder = inputString.nextLine();
+                            model.searchPesanan(idOrder);
+//                          System.out.println(e);
+                            break;
+                        
+                    case 7:
                         System.out.println("You are logged out!");
                         break;
                 }
@@ -212,7 +225,7 @@ public class Console {
                 inputInteger = new Scanner(System.in);
                 inputString = new Scanner(System.in);
             }
-        } while (n != 6);
+        } while (n != 7);
 
     }
 
@@ -242,7 +255,7 @@ public class Console {
                         break;
 
                     case 5:
-                        
+                        break;
 
                     case 6:
                         System.out.println("You are logged out!");

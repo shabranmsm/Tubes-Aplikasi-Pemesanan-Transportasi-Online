@@ -6,6 +6,11 @@
 //
 package Model;
 
+import Database.FileData;
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -13,13 +18,14 @@ public class Aplikasi {
 
     private List<Pelanggan> daftarPelanggan;
     private List<Pengemudi> daftarPengemudi;
-   
+    private FileData save;   
     private String IdLog;
     private String IdLogDriver;
 
     public Aplikasi() {
         daftarPelanggan = new ArrayList();
         daftarPengemudi = new ArrayList();
+        save = new FileData();
     }
 
     //PELANGGAN------------------------------------------------------------------------------------------------------------------
@@ -63,6 +69,7 @@ public class Aplikasi {
         return false;
     }
     
+    
     public Pelanggan getPelanggan(String id) {
         return daftarPelanggan.stream().filter(c -> c.getIdCustomer().equals(id)).findFirst().orElse(null);
     }
@@ -71,7 +78,7 @@ public class Aplikasi {
         Pelanggan c = daftarPelanggan.get(idx);
         return c;
     }
-
+    
     public boolean loginPelanggan(String username, String password) {
         for (Pelanggan c : daftarPelanggan) {
             if (c.getUsername().equals(username) && c.getPassword().equals(password)) {
@@ -82,13 +89,10 @@ public class Aplikasi {
         }
         return false;
     }
-
-    public void searchPelanggan(String searchPelanggan) {
-        for (Pelanggan c : daftarPelanggan) {
-            if (c.getIdCustomer().equals(searchPelanggan)) {
-                System.out.println(c.getIdCustomer());
-
-            }
+    
+    public void searchPesanan(String id) {
+        for(Pelanggan c : daftarPelanggan) {
+            c.getPesanan(id);
         }
     }
 
@@ -166,4 +170,55 @@ public class Aplikasi {
         List idDriv = daftarPengemudi.stream().map(d -> d.toString()).collect(Collectors.toList());
         return (String[]) idDriv.stream().toArray(size -> new String[size]);
     }
+    
+    
+    //SAVE & LOAD TO FILE--------------------------------------------------------------------------------------------------------
+    // Database Pelanggan
+    public void loadPelaggan() throws FileNotFoundException, IOException{
+        try {
+            daftarPelanggan = (ArrayList<Pelanggan>) save.getObject("FilePelanggan.dat");
+        } catch (FileNotFoundException ex) {
+            File f = new File("FilePelanggan.dat");
+            f.createNewFile();
+        } catch (EOFException ex) {
+            daftarPelanggan = new ArrayList<>();
+        } catch (IOException | ClassNotFoundException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+    
+     public void savePelanggan() throws FileNotFoundException, IOException {
+        try {
+            save.saveObject(daftarPelanggan, "FilePelanggan.dat");
+        } catch (FileNotFoundException ex) {
+            throw new FileNotFoundException("file not found");
+        } catch (IOException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+     
+    // Database Pengemudi
+    public void loadPengemudi() throws FileNotFoundException, IOException{
+        try {
+            daftarPengemudi = (ArrayList<Pengemudi>) save.getObject("FilePengemudi.dat");
+        } catch (FileNotFoundException ex) {
+            File f = new File("FilePengemudi.dat");
+            f.createNewFile();
+        } catch (EOFException ex) {
+            daftarPengemudi = new ArrayList<>();
+        } catch (IOException | ClassNotFoundException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+    
+     public void savePengemudi() throws FileNotFoundException, IOException {
+        try {
+            save.saveObject(daftarPengemudi, "FilePengemudi.dat");
+        } catch (FileNotFoundException ex) {
+            throw new FileNotFoundException("file not found");
+        } catch (IOException ex) {
+            throw new IOException("error " + ex.getMessage());
+        }
+    }
+            
 }

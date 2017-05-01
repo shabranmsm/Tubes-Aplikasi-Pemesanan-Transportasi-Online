@@ -44,8 +44,21 @@ public class Pelanggan extends Orang {
         }
     }
 
-    public void searchPesanan(String idPesanan) {
-
+//    public void searchPesanan(String idPesanan) {
+//        for(Pelanggan c : daftarPelanggan) {
+//            if (c.getPesanan(id).equals(id)) {
+//                System.out.println(c.getPesanan(id));
+//            }
+//        }
+//    }
+    
+    public Pesanan getPesanan(String id){
+        for (Pesanan o : daftarPesanan) {
+            if (o.getIdPesanan().equals(id)) {
+                return o;
+            }
+        }
+        return null;
     }
   
     public void showAllPesanan() {
