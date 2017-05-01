@@ -40,11 +40,11 @@ public class Aplikasi {
         return false;
     }
 
-    public boolean createPesanan(String lokasiAwal, String destinasi) {
+    public boolean createKurir(String lokasiAwal, String destinasi) {
 
         for (Pelanggan c : daftarPelanggan) {
             if (c.getIdCustomer().equals(IdLog)) {
-                c.createPesanan(lokasiAwal, destinasi);
+                c.createPesananKurir(lokasiAwal, destinasi);
                 System.out.println(IdLog);
                 return true;
             }
