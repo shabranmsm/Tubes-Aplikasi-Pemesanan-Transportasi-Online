@@ -234,8 +234,6 @@ public class Customer extends javax.swing.JFrame {
 
         jLabel12.setText("ID Pesanan");
 
-        jTextField1.setText("jTextField1");
-
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);

@@ -211,7 +211,11 @@ public class Console {
 
                     case 6: System.out.print("Masukkan id pesanan : "); 
                             String idOrder = inputString.nextLine();
-                            model.searchPesanan(idOrder);
+                            if ((model.searchPesanan(idOrder)) == true) {
+                                System.out.println("Order has been removed");
+                            } else {
+                                System.out.println("Failed !");
+                            }
 //                          System.out.println(e);
                             break;
                         
